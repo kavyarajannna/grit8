@@ -810,137 +810,106 @@
         }
 
         .future-proof-section {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40vh;
-            padding: 20px;
-            text-align: center;
-        }
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 516px;
+        padding: 20px;
+        text-align: center;
+    }
 
+    .future-proof-section .container60 {
+        background-color: #f5f5f5;
+        padding: 20px;
+        max-width: 90%;
+    }
 
+    .future-proof-section .headline60 {
+        font-weight: 900;
+        line-height: 1.2;
+        font-size: 32px;
+        color: #000000;
+    }
+
+    .future-proof-section .headline60 span {
+        display: block;
+    }
+
+    .future-proof-section .button60 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #5107B8;
+        color: white;
+        width: 432px;
+        height: 72px;
+        font-size: 14px;
+        font-weight: 900;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-top: 15px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s, color 0.3s, border 0.3s;
+        gap: 30px;
+        border: 2px solid #5107B8;
+    }
+
+    .future-proof-section .button60:hover {
+        background-color: white;
+        color: #5107B8;
+        border: 2px solid #5107B8;
+    }
+
+    .future-proof-section .button60 .arrow {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .future-proof-section .button60:hover .arrow {
+        transform: translateX(5px);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
         .future-proof-section {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40vh;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .future-proof-section .container60 {
-            background-color: #f5f5f5;
-            padding: 20px;
-            max-width: 90%;
+            height: auto;
+            padding: 15px;
         }
 
         .future-proof-section .headline60 {
-
-            font-weight: 900;
-            line-height: 38.4px;
-            font-size: 32px;
-            /* Responsive font size */
-
-            color: #000000;
-        }
-
-        .future-proof-section .subtext60 {
-            font-weight: 900;
-            line-height: 38.4px;
-            font-size: 32px;
-            color: #000000;
-            margin-top: 10px;
-            margin-bottom: 30px;
+            font-size: 5vw;
         }
 
         .future-proof-section .button60 {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #5107B8;
-            color: white;
-            width: 432px;
-            height: 72px;
-            font-size: 14px;
-            font-weight: 900;
-            text-transform: uppercase;
-            border-radius: 4px;
-            margin-top: 15px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s, color 0.3s, border 0.3s;
-            gap: 30px;
-            border: 2px solid #5107B8;
-            /* Same as background initially */
+            font-size: 4vw;
+            padding: 10px 20px;
+            width: 80%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .future-proof-section {
+            height: auto;
+            padding: 10px;
         }
 
-        .future-proof-section .button60:hover {
-            background-color: white;
-            /* Invert background */
-            color: #5107B8;
-            /* Invert text */
-            border: 2px solid #5107B8;
-            /* Keep border same as original background */
+        .future-proof-section .container60 {
+            max-width: 100%;
         }
 
-        .future-proof-section .button60 .arrow {
-            transition: transform 0.3s ease-in-out;
+        .future-proof-section .headline60 {
+            font-size: 6vw;
         }
 
-        .future-proof-section .button60:hover .arrow {
-            transform: translateX(5px);
+        .future-proof-section .button60 {
+            font-size: 4.5vw;
+            width: 100%;
+            height: auto;
         }
-
-
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .future-proof-section {
-                height: auto;
-                padding: 15px;
-            }
-
-            .future-proof-section .headline60 {
-                font-size: 5vw;
-            }
-
-            .future-proof-section .subtext60 {
-                font-size: 4vw;
-            }
-
-            .future-proof-section .button60 {
-                font-size: 4vw;
-                padding: 10px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .future-proof-section {
-                height: auto;
-                padding: 10px;
-            }
-
-            .future-proof-section .container60 {
-                max-width: 100%;
-            }
-
-            .future-proof-section .headline60 {
-                font-size: 6vw;
-            }
-
-            .future-proof-section .subtext60 {
-                font-size: 4.5vw;
-            }
-
-            .future-proof-section .button60 {
-                font-size: 4.5vw;
-                width: 100%;
-            }
-        }
+    }
 
 
 
@@ -1713,9 +1682,11 @@
 
     <div class="future-proof-section">
         <div class="container60">
-            <div class="headline60">Future-proof your business in 2025.</div>
-            <div class="subtext60">Explore how Gritbyte Labs can empower your industry.</div>
-            <a href="#" class="button60">
+            <div class="headline60">
+                <span>Future-proof your business in 2025.</span>
+                <span>Explore how Gritbyte Labs can empower your industry.</span>
+            </div>
+            <a href="contact3.html" class="button60">
                 Get in Touch <span class="arrow">→</span>
             </a>
         </div>
