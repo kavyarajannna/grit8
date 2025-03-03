@@ -32,9 +32,7 @@
 
 
 
-        body {
-            background-color: #f8f8f8;
-        }
+       
 
         header {
             display: flex;
@@ -58,7 +56,7 @@
         header.scrolled nav a {
             color: black;
         }
-
+        
         .menu-icon {
             display: none;
             font-size: 30px;
@@ -220,7 +218,7 @@
     padding-right: 20%;
     
     /* Add a black gradient at the top */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 40%);
+    background: linear-gradient(to bottom, rgb(0 0 0 / 93%) 0%, rgba(0, 0, 0, 0) 40%);
 }
 
 
@@ -1257,7 +1255,17 @@
             gap: 20px;
             font-size: 14px;
         }
-
+        .contact-info i {
+        margin-right: 8px;
+        color: #000000;
+    }
+    .contact-info a {
+        text-decoration: none;
+        color: #333;
+    }
+    .contact-info a:hover {
+        color: #5107B8;
+    }
         .contact-info p {
             display: flex;
             align-items: center;
@@ -1294,36 +1302,46 @@
             flex-wrap: wrap;
         }
 
-        /* Responsive styles */
         @media (max-width: 768px) {
-            .certified-trusted {
-                flex-wrap: nowrap;
-                /* Keep items in one row */
-                flex-direction: row;
-                justify-content: space-between;
-                gap: 10px;
-                overflow-x: auto;
-                /* Prevent breaking layout */
-                padding: 10px;
-            }
+    .certified-trusted {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 20px;
+    }
 
-            .certified,
-            .trusted {
-                flex: 1;
-                padding-top: 10%;
-                align-items: center;
-                text-align: center;
-                min-width: 150px;
-                /* Prevent squishing */
-            }
+    .certified {
+        text-align: left;
+        align-items: flex-start;
+        width: 100%;
+    }
 
-            .trusted-images {
-                justify-content: center;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                /* Allow scrolling if needed */
-            }
-        }
+    .certified img {
+        max-width: 100px; /* Adjust size if needed */
+    }
+
+    .trusted {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .trusted-images {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        gap: 10px;
+        justify-content: flex-start; /* Align images to the left */
+        white-space: nowrap; /* Ensure images stay in one row */
+        padding-bottom: 5px; /* Prevent cut-off on small screens */
+    }
+
+    .trusted-images img {
+        max-width: 80px; /* Adjust image size if necessary */
+        height: auto;
+        flex-shrink: 0; /* Prevent images from shrinking */
+    }
+}
+
 
         .vertical-line {
             min-height: 80px;
@@ -1473,7 +1491,6 @@
             <a href="Product.html">Products</a>
             <a href="Solutions.html">Solutions</a>
             <a href="#">Case Studies</a>
-            <a href="#">Testimonials</a>
             <a href="#">Blog</a>
             <a href="#">Career</a>
             <a href="contact3.html">Contact Us</a>
@@ -1731,7 +1748,7 @@
             </div>
             <div class="footer-column">
                 <div class="footer-links">
-                    <a href="Index.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="#">About</a>
                     <a href="Product.html">Services</a>
                     <a href="Solutions.html">Solutions</a>
@@ -1741,16 +1758,16 @@
             </div>
             <div class="footer-column">
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/gritbyte/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/gritbytelabs/"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-x-twitter"></i></a>
 
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/gritbyte/?hl=en"><i class="fab fa-instagram"></i></a>
                 </div>
                 <hr>
                 <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> +91-XXXXXXXXXX</p>
-                    <p><i class="fas fa-envelope"></i> contact@domain.com</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+918431962626">+91-8431962626</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:contact@gritbyte.com">contact@gritbyte.com</a></p>
                 </div>
                 <hr>
                 <div class="location-row">
@@ -1823,50 +1840,46 @@
 
 
     </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("contact-form").addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent default form submission
-
-                // Collect form data
-                let name = document.getElementById("name").value;
-                let email = document.getElementById("email").value;
-                let phone = document.getElementById("phone").value;
-                let company = document.getElementById("company").value;
-                let service = document.getElementById("service").value;
-                let message = document.getElementById("message").value;
-                let contactMethod = document.querySelector('input[name="contact-method"]:checked') ? document.querySelector('input[name="contact-method"]:checked').value : "Not specified";
-
-                // WhatsApp Integration
-                let whatsappMessage = `Hello, I want to inquire about:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nService: ${service}\nPreferred Contact: ${contactMethod}\nMessage: ${message}`;
-                let encodedMessage = encodeURIComponent(whatsappMessage);
-                let whatsappUrl = `https://wa.me/8310214624?text=${encodedMessage}`;
-
-                // Email Integration (Fallback)
-                let mailtoLink = `mailto:kavyaraj313@gmail.com?subject=Inquiry from ${name}&body=${encodeURIComponent(whatsappMessage)}`;
-
-                // File upload validation
-                let fileInput = document.getElementById("file");
-                if (fileInput.files.length > 0) {
-                    let file = fileInput.files[0];
-                    if (file.size > 5 * 1024 * 1024) { // File size exceeds 5MB
-                        alert("File size exceeds 5MB. Please upload a smaller file.");
-                        return;
-                    }
-                    // If file size is acceptable, notify user and continue with form submission
-                    alert("File uploaded successfully. Please proceed with submission.");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            // Collect form data
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let company = document.getElementById("company").value;
+            let service = document.getElementById("service").value;
+            let message = document.getElementById("message").value;
+            let contactMethod = document.querySelector('input[name="contact-method"]:checked') ? 
+                document.querySelector('input[name="contact-method"]:checked').value : "Not specified";
+    
+            // WhatsApp Message Format
+            let whatsappMessage = `Hello, I want to inquire about:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nService: ${service}\nPreferred Contact: ${contactMethod}\nMessage: ${message}`;
+            let encodedMessage = encodeURIComponent(whatsappMessage);
+            let whatsappUrl = `https://wa.me/918310214624?text=${encodedMessage}`; // Ensure correct number format
+    
+            // Email Fallback
+            let mailtoLink = `mailto:kavyaraj313@gmail.com?subject=Inquiry from ${name}&body=${encodedMessage}`;
+    
+            // File Upload Validation
+            let fileInput = document.getElementById("file");
+            if (fileInput.files.length > 0) {
+                let file = fileInput.files[0];
+                if (file.size > 5 * 1024 * 1024) { // File size exceeds 5MB
+                    alert("File size exceeds 5MB. Please upload a smaller file.");
+                    return;
                 }
-
-                // Redirect to WhatsApp or Email based on user's choice
-                if (navigator.share) { // Check if WhatsApp is available (Web Share API for mobile)
-                    window.open(whatsappUrl, "_blank");
-                } else {
-                    window.location.href = mailtoLink;
-                }
-            });
+                alert("File uploaded successfully. Please proceed with submission.");
+            }
+    
+            // Redirect to WhatsApp if available, otherwise Email
+            window.open(whatsappUrl, "_blank");
         });
-
+    });
     </script>
+    
     <script>
         function updateFlag() {
             var select = document.getElementById("country-code");
